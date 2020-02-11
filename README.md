@@ -1,6 +1,11 @@
 Shorty Challenge
 ================
 
+## How to Run
+
+`docker-compose up` would start the service on port 3000
+`docker-compose exec web bundle exec rspec` will run the entire test suit
+
 ## The Challenge
 
 The challenge, if you choose to accept it, is to create a micro service to shorten urls, in the style that TinyURL and bit.ly made popular.
