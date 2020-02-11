@@ -45,11 +45,14 @@ class ShortenerApi < Sinatra::Base
       shortcode = generate_shortcode while $db[shortcode]
     end
 
-    $db[shortcode] = { url: url, stats: {
-      startDate: Time.now.utc.iso8601,
-      redirectCount: 0
+    $db[shortcode] = {
+      url: url,
+      stats: {
+        startDate: Time.now.utc.iso8601,
+        redirectCount: 0
+      }
+    }
 
-    } }
     status 201
     { shortcode: shortcode }.to_json
   end
